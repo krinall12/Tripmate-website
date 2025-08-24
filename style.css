@@ -1,0 +1,589 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #060529; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    text-align: center;
+}
+
+/* Video Background */
+#home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8; /* Slightly dim the video for better text visibility */
+}
+
+.overlay {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Dark translucent background */
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    animation: fadeIn 2s ease-in-out;
+    margin: 0;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #0077cc; /* Blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #005fa3; /* Darker Blue */
+    transform: scale(1.1);
+}
+
+/* Header Styling */
+header {
+    background: #060529; /* Dark background */
+    color: #fff;
+    padding: 40px 40px;  /* more padding = taller header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px; /* Explicit height */
+}
+
+/* Logo + Brand */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between logo and brand */
+}
+
+.logo-section img {
+    height: 50px;   /* bigger logo */
+    width: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.brand-name {
+    font-size: 1.6rem;  /* slightly bigger text */
+    font-weight: bold;
+    color: #fff;
+    padding-left: 30px;
+    align-items: center;
+}
+
+
+/* Navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none !important; /* Force remove underline */
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* States */
+.nav-links a:link,
+.nav-links a:visited {
+    color: #fff;
+    text-decoration: none !important;
+}
+
+.nav-links a:hover {
+    background: #1e3a5f;
+    color: #6aa7d9;
+}
+
+.nav-links a:active,
+.nav-links a.active {
+    background: #6aa7d9;
+    color: #060529;
+    font-weight: bold;
+}
+
+
+/* Hover */
+.nav-links a:hover {
+    background: #1e3a5f; /* darker blue highlight */
+    color: #6aa7d9;
+}
+
+/* Active / Clicked */
+.nav-links a.active {
+    color: #060529;
+    font-weight: bold;
+}
+
+
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards ease-in-out;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0077cc; /* Blue */
+}
+
+/* Services Section */
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: #1e1e1e; /* Dark background */
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    color: #e0e0e0; /* Light text */
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.service i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #0077cc; /* Blue */
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #b0b0b0; /* Light gray */
+}
+
+/* Gallery Section */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-container img {
+    width: 100%;
+    max-width: 300px; /* Larger images */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 2px solid #0077cc; /* Blue border */
+}
+
+.gallery-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 119, 204, 0.6); /* Blue shadow */
+}
+
+/* Contact Section */
+/* Contact Section Styling */
+#contact {
+    background: #1e1e1e; /* Dark background */
+    padding: 60px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 350px;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    color: #0077cc; /* Blue */
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+    color: #e0e0e0; /* Light text */
+}
+
+.contact-info a {
+    color: #0077cc; /* Blue */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Hours List */
+.hours-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hours-list li {
+    font-size: 1rem;
+    color: #b0b0b0; /* Light gray */
+    padding: 4px 0;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    min-width: 400px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #2c2c2c; /* Dark input background */
+    color: #e0e0e0; /* Light text */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0077cc;
+    box-shadow: 2px 2px 15px rgba(0, 119, 204, 0.6);
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #e0e0e0; /* Light text */
+}
+
+.checkbox input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    padding: 15px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    width: 100%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #005fa3, #004488);
+}
+
+/* Footer */
+footer {
+    background: #060529;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #e1306c; /* Instagram pink */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 5px;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column; /* Stack logo + nav */
+        align-items: center;
+        padding: 15px 10px;
+        height: auto; /* remove fixed height */
+    }
+
+    .logo-section {
+        flex-direction: row; /* keep logo and brand on one line */
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 10px; /* small gap before nav */
+    }
+
+    .brand-name {
+        font-size: 1.2rem;
+        padding-left: 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .overlay {
+        max-width: 60%;
+        padding: 15px 25px;
+        top: 65%;
+    }
+
+    .overlay h1 {
+        font-size: 2rem;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-form, .contact-info {
+        min-width: 100%;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+     header {
+        padding: 10px 5px;
+    }
+
+    .logo-section img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .overlay {
+        max-width: 80%;
+        padding: 10px 15px;
+        top: 60%;
+    }
+
+    .overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .overlay p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .service {
+        width: 90%;
+    }
+
+    .gallery-container img {
+        width: 90%;
+        height: auto;
+    }
+
+    .contact-form input, .contact-form textarea {
+        padding: 12px;
+    }
+}
+
+/* Small Phones (iPhone SE etc.) */
+@media (max-width: 480px) {
+    .overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .overlay p {
+        font-size: 0.9rem;
+    }
+
+    .nav-links {
+        font-size: 0.9rem;
+        gap: 5px;
+    }
+
+    .logo-section img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+        padding-left: 5px;
+    }
+}
